@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<script>try{var t=localStorage.getItem('auraDomu_theme');if(t&&/^[a-z-]+$/.test(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Przeglądaj aktualne oferty domów i rezydencji na sprzedaż i wynajem we Wrocławiu i na Dolnym Śląsku. Wille, penthousy i nowe inwestycje premium.">
+<meta property="og:title" content="Oferty nieruchomości – Aura Domu Wrocław">
+<meta property="og:description" content="Przeglądaj aktualne oferty domów i rezydencji na sprzedaż i wynajem we Wrocławiu i na Dolnym Śląsku. Wille, penthousy i nowe inwestycje premium.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Oferty – Aura Domu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="contrast-toggle" id="contrastToggle" type="button" aria-label="Wybierz kolor strony" aria-haspopup="true" aria-expanded="false" aria-controls="themePanel"><span class="contrast-icon" aria-hidden="true"></span></button>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Aura Domu – strona główna"><img src="logo.png" alt="Aura Domu" width="700" height="371"></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Główna</a></li>
+      <li class="nav-dropdown">
+        <a href="oferty.html" class="nav-link active">Oferty <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="oferty.html">Wszystkie oferty</a></li>
+          <li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li>
+          <li><a href="oferty.html?type=wynajem">Na wynajem</a></li>
+          <li><a href="oferty.html?type=luksusowe">Luksusowe</a></li>
+          <li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li>
+        </ul>
+      </li>
+      <li><a href="o-nas.html" class="nav-link">O nas</a></li>
+      <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-breadcrumb"><a href="index.html">Główna</a> / Oferty</p>
+    <h1 class="page-title">Nasze <em style="font-style:italic;color:var(--gold)">oferty</em></h1>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <button class="filter-chip active" data-filter="all">Wszystkie</button>
+    <button class="filter-chip" data-filter="sprzedaz">Na sprzedaż</button>
+    <button class="filter-chip" data-filter="wynajem">Na wynajem</button>
+    <button class="filter-chip" data-filter="luksusowe">Luksusowe</button>
+    <button class="filter-chip" data-filter="nowe">Nowe inwestycje</button>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<section class="listings-page-section">
+  <div class="container">
+    <p class="results-info" id="resultsInfo" aria-live="polite"></p>
+    <p class="no-results" id="noResults" hidden>Brak ofert spełniających wybrane kryteria. <a href="oferty.html">Wyczyść filtry</a></p>
+    <div class="listings-page-grid">
+
+      <!-- Card 1 -->
+      <div class="listing-card" data-type="sprzedaz" data-price="2850000" data-rooms="8">
+        <div class="card-image-wrap">
+          <img src="images/oferta-1-zewnatrz.jpg" alt="Willa z basenem" loading="lazy">
+          <span class="card-badge">Na sprzedaż</span>
+          <span class="card-price">2 850 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Nowoczesna willa z basenem</h3>
+          <p class="card-location">📍 Oporów, Wrocław</p>
+          <p class="card-desc">Willa w prestiżowej dzielnicy Oporów, 520 m², 8 pokoi, własne SPA, kino i basen ogrodowy.</p>
+          <div class="card-features">
+            <span>🛏 8 pokoi</span><span>🚿 4 łazienki</span><span>🚗 3 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=1" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="listing-card" data-type="sprzedaz" data-price="1450000" data-rooms="5">
+        <div class="card-image-wrap">
+          <img src="images/oferta-2-zewnatrz.jpg" alt="Minimalistyczny dom w Krzykach" loading="lazy">
+          <span class="card-badge">Na sprzedaż</span>
+          <span class="card-price">1 450 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Minimalistyczny dom w Krzykach</h3>
+          <p class="card-location">📍 Krzyki, Wrocław</p>
+          <p class="card-desc">Minimalistyczna architektura w dzielnicy Krzyki, panoramiczne przeszklenia, ogród 900 m², smart home.</p>
+          <div class="card-features">
+            <span>🛏 5 pokoi</span><span>🚿 3 łazienki</span><span>🚗 2 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=2" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="listing-card" data-type="sprzedaz luksusowe" data-price="4200000" data-rooms="10">
+        <div class="card-image-wrap">
+          <img src="images/oferta-3-zewnatrz.jpg" alt="Rezydencja przy Parku Leśnickim" loading="lazy">
+          <span class="card-badge">Luksus</span>
+          <span class="card-price">4 200 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Rezydencja przy Parku Leśnickim</h3>
+          <p class="card-location">📍 Leśnica, Wrocław</p>
+          <p class="card-desc">Rezydencja 750 m² przy Parku Leśnickim. Sauna, kino domowe, winiarnia, taras panoramiczny.</p>
+          <div class="card-features">
+            <span>🛏 10 pokoi</span><span>🚿 5 łazienek</span><span>🚗 4 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=3" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="listing-card" data-type="wynajem" data-rooms="6">
+        <div class="card-image-wrap">
+          <img src="images/oferta-4-zewnatrz.jpg" alt="Ekskluzywna willa na wynajem" loading="lazy">
+          <span class="card-badge">Na wynajem</span>
+          <span class="card-price">18 000 zł/mies.</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Ekskluzywna willa na wynajem</h3>
+          <p class="card-location">📍 Śródmieście, Wrocław</p>
+          <p class="card-desc">Umeblowana willa 420 m² w Śródmieściu, 5 minut spaceru od Rynku. Prywatny ogród, taras i garaż na 2 samochody.</p>
+          <div class="card-features">
+            <span>🛏 6 pokoi</span><span>🚿 3 łazienki</span><span>🚗 2 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=4" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="listing-card" data-type="sprzedaz nowe" data-price="3100000" data-rooms="7">
+        <div class="card-image-wrap">
+          <img src="images/oferta-5-zewnatrz.jpg" alt="Nowa inwestycja – Złoty Zakątek" loading="lazy">
+          <span class="card-badge">Nowe</span>
+          <span class="card-price">3 100 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Nowa inwestycja – Złoty Zakątek</h3>
+          <p class="card-location">📍 Długołęka k. Wrocławia</p>
+          <p class="card-desc">Zamknięte osiedle 10 domów premium w Długołęce. Smart home, klasa energetyczna A+, ochrona 24h.</p>
+          <div class="card-features">
+            <span>🛏 7 pokoi</span><span>🚿 4 łazienki</span><span>🚗 2 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=5" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="listing-card" data-type="sprzedaz luksusowe" data-price="6500000" data-rooms="5">
+        <div class="card-image-wrap">
+          <img src="images/oferta-6-taras.jpg" alt="Penthouse" loading="lazy">
+          <span class="card-badge">Luksus</span>
+          <span class="card-price">6 500 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Penthouse z panoramą Wrocławia</h3>
+          <p class="card-location">📍 Stare Miasto, Wrocław</p>
+          <p class="card-desc">Luksusowy penthouse 320 m² z tarasem 160 m². Prywatna winda, concierge i widok na panoramę Wrocławia.</p>
+          <div class="card-features">
+            <span>🛏 5 pokoi</span><span>🚿 3 łazienki</span><span>🚗 2 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=6" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="listing-card" data-type="sprzedaz" data-price="980000" data-rooms="5">
+        <div class="card-image-wrap">
+          <img src="images/oferta-7-zewnatrz.jpg" alt="Dom z rozległym ogrodem" loading="lazy">
+          <span class="card-badge">Na sprzedaż</span>
+          <span class="card-price">980 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Dom z rozległym ogrodem</h3>
+          <p class="card-location">📍 Kobierzyce k. Wrocławia</p>
+          <p class="card-desc">Dom 280 m² z ogrodem 1 400 m² w Kobierzycach. Podmiejski spokój, 15 minut od centrum Wrocławia.</p>
+          <div class="card-features">
+            <span>🛏 5 pokoi</span><span>🚿 2 łazienki</span><span>🚗 1 garaż</span>
+          </div>
+          <a href="szczegoly.html?id=7" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="listing-card" data-type="wynajem" data-rooms="8">
+        <div class="card-image-wrap">
+          <img src="images/oferta-8-zewnatrz.jpg" alt="Rezydencja w stylu art déco" loading="lazy">
+          <span class="card-badge">Na wynajem</span>
+          <span class="card-price">25 000 zł/mies.</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Rezydencja w stylu art déco</h3>
+          <p class="card-location">📍 Zalesie, Wrocław</p>
+          <p class="card-desc">Przedwojenna rezydencja w Zalesiu po renowacji. Detale art déco, 520 m², własny park 2 000 m².</p>
+          <div class="card-features">
+            <span>🛏 8 pokoi</span><span>🚿 4 łazienki</span><span>🚗 3 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=8" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="listing-card" data-type="sprzedaz nowe" data-price="2200000" data-rooms="6">
+        <div class="card-image-wrap">
+          <img src="images/oferta-9-zewnatrz.jpg" alt="Ekodom pasywny" loading="lazy">
+          <span class="card-badge">Nowe</span>
+          <span class="card-price">2 200 000 zł</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Ekodom pasywny z certyfikatem BREEAM</h3>
+          <p class="card-location">📍 Siechnice k. Wrocławia</p>
+          <p class="card-desc">Dom pasywny 380 m² w Siechnicach. Panele fotowoltaiczne, pompa ciepła, certyfikat BREEAM.</p>
+          <div class="card-features">
+            <span>🛏 6 pokoi</span><span>🚿 3 łazienki</span><span>🚗 2 garaże</span>
+          </div>
+          <a href="szczegoly.html?id=9" class="btn-outline">Zobacz szczegóły</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="Aura Domu" width="700" height="371" loading="lazy"></div>
+        <p class="footer-tagline">Luksusowe nieruchomości we Wrocławiu i na Dolnym Śląsku. Twój wymarzony dom jest bliżej, niż myślisz.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Nawigacja</h4><ul><li><a href="index.html">Główna</a></li><li><a href="oferty.html">Oferty</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Oferty</h4><ul><li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li><li><a href="oferty.html?type=wynajem">Na wynajem</a></li><li><a href="oferty.html?type=luksusowe">Luksusowe</a></li><li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li>📍 ul. Świdnicka 22, 50-068 Wrocław</li><li>📞 +48 71 123 45 67</li><li>✉️ biuro@auradomu.pl</li><li>🕐 Pon–Pt: 9:00–18:00</li><li>🕐 Sob: 10:00–14:00</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aura Domu. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-links"><a href="#">Polityka prywatności</a><a href="#">Regulamin</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

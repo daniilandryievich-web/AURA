@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<script>try{var t=localStorage.getItem('auraDomu_theme');if(t&&/^[a-z-]+$/.test(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zobacz galerię zdjęć luksusowych wnętrz, salonów, kuchni i ogrodów z ofert Aura Domu we Wrocławiu.">
+<meta property="og:title" content="Galeria wnętrz i nieruchomości – Aura Domu">
+<meta property="og:description" content="Zobacz galerię zdjęć luksusowych wnętrz, salonów, kuchni i ogrodów z ofert Aura Domu we Wrocławiu.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Galeria – Aura Domu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="contrast-toggle" id="contrastToggle" type="button" aria-label="Wybierz kolor strony" aria-haspopup="true" aria-expanded="false" aria-controls="themePanel"><span class="contrast-icon" aria-hidden="true"></span></button>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Aura Domu – strona główna"><img src="logo.png" alt="Aura Domu" width="700" height="371"></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Główna</a></li>
+      <li class="nav-dropdown">
+        <a href="oferty.html" class="nav-link">Oferty <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="oferty.html">Wszystkie oferty</a></li>
+          <li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li>
+          <li><a href="oferty.html?type=wynajem">Na wynajem</a></li>
+          <li><a href="oferty.html?type=luksusowe">Luksusowe</a></li>
+          <li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li>
+        </ul>
+      </li>
+      <li><a href="o-nas.html" class="nav-link">O nas</a></li>
+      <li><a href="galeria.html" class="nav-link active">Galeria</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="gallery-page-section">
+  <div class="container">
+    <div class="section-header" style="text-align:left;margin-bottom:2rem;">
+      <p class="page-breadcrumb" style="padding-top:0;margin-bottom:0.5rem;"><a href="index.html">Główna</a> / Galeria</p>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:400;">
+        Galeria <em style="font-style:italic;color:var(--gold)">wnętrz i nieruchomości</em>
+      </h1>
+    </div>
+
+    <div class="gallery-filters">
+      <button class="filter-chip active" data-filter="all">Wszystkie</button>
+      <button class="filter-chip" data-filter="zewnetrze">Zewnętrze</button>
+      <button class="filter-chip" data-filter="salon">Salon</button>
+      <button class="filter-chip" data-filter="kuchnia">Kuchnia</button>
+      <button class="filter-chip" data-filter="sypialnia">Sypialnia</button>
+      <button class="filter-chip" data-filter="lazienka">Łazienka</button>
+      <button class="filter-chip" data-filter="ogrod">Ogród</button>
+    </div>
+
+    <div id="galleryGrid" class="gallery-page-grid">
+
+      <!-- SALON -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Nowoczesny salon z kominkiem" data-filter="salon">
+        <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Nowoczesny salon z kominkiem" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Elegancki salon z panoramicznymi oknami" data-filter="salon">
+        <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Elegancki salon" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Minimalistyczny salon w jasnych barwach" data-filter="salon">
+        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Minimalistyczny salon" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+      <!-- KUCHNIA -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Kuchnia otwarta z wyspą" data-filter="kuchnia">
+        <img src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kuchnia otwarta z wyspą" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/3935317/pexels-photo-3935317.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Nowoczesna kuchnia z marmurowym blatem" data-filter="kuchnia">
+        <img src="https://images.pexels.com/photos/3935317/pexels-photo-3935317.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kuchnia z marmurowym blatem" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+      <!-- SYPIALNIA -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Sypialnia z panoramicznym oknem" data-filter="sypialnia">
+        <img src="https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sypialnia z panoramicznym oknem" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Luksusowa sypialnia z baldachimem" data-filter="sypialnia">
+        <img src="https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luksusowa sypialnia" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+      <!-- LAZIENKA -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Łazienka w marmurze z wanną wolnostojącą" data-filter="lazienka">
+        <img src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Łazienka z wanną" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/2507016/pexels-photo-2507016.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Nowoczesna łazienka z prysznicem walk-in" data-filter="lazienka">
+        <img src="https://images.pexels.com/photos/2507016/pexels-photo-2507016.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Łazienka walk-in" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+      <!-- OGROD -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/1105019/pexels-photo-1105019.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Ogród z tarasem i strefą wypoczynku" data-filter="ogrod">
+        <img src="https://images.pexels.com/photos/1105019/pexels-photo-1105019.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ogród z tarasem" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/2249959/pexels-photo-2249959.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Basen zewnętrzny przy rezydencji" data-filter="ogrod">
+        <img src="https://images.pexels.com/photos/2249959/pexels-photo-2249959.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Basen zewnętrzny" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+      <!-- ZEWNETRZE -->
+      <div class="gallery-item" data-src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="Rezydencja – widok zewnętrzny" data-filter="zewnetrze">
+        <img src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rezydencja z zewnątrz" loading="lazy">
+        <div class="gallery-hover"><span>+</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="Aura Domu" width="700" height="371" loading="lazy"></div>
+        <p class="footer-tagline">Luksusowe nieruchomości we Wrocławiu i na Dolnym Śląsku. Twój wymarzony dom jest bliżej, niż myślisz.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Nawigacja</h4><ul><li><a href="index.html">Główna</a></li><li><a href="oferty.html">Oferty</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Oferty</h4><ul><li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li><li><a href="oferty.html?type=wynajem">Na wynajem</a></li><li><a href="oferty.html?type=luksusowe">Luksusowe</a></li><li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li>📍 ul. Świdnicka 22, 50-068 Wrocław</li><li>📞 +48 71 123 45 67</li><li>✉️ biuro@auradomu.pl</li><li>🕐 Pon–Pt: 9:00–18:00</li><li>🕐 Sob: 10:00–14:00</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aura Domu. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-links"><a href="#">Polityka prywatności</a><a href="#">Regulamin</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Zamknij">✕</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Poprzednie">‹</button>
+    <img src="" alt="" id="lightboxImg">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Następne">›</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

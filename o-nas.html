@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<script>try{var t=localStorage.getItem('auraDomu_theme');if(t&&/^[a-z-]+$/.test(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Poznaj zespół Aura Domu – lidera rynku nieruchomości premium we Wrocławiu. 14 lat doświadczenia, partner międzynarodowej sieci nieruchomości premium.">
+<meta property="og:title" content="O nas – Aura Domu Wrocław">
+<meta property="og:description" content="Poznaj zespół Aura Domu – lidera rynku nieruchomości premium we Wrocławiu. 14 lat doświadczenia, partner międzynarodowej sieci nieruchomości premium.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>O nas – Aura Domu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="contrast-toggle" id="contrastToggle" type="button" aria-label="Wybierz kolor strony" aria-haspopup="true" aria-expanded="false" aria-controls="themePanel"><span class="contrast-icon" aria-hidden="true"></span></button>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Aura Domu – strona główna"><img src="logo.png" alt="Aura Domu" width="700" height="371"></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Główna</a></li>
+      <li class="nav-dropdown">
+        <a href="oferty.html" class="nav-link">Oferty <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="oferty.html">Wszystkie oferty</a></li>
+          <li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li>
+          <li><a href="oferty.html?type=wynajem">Na wynajem</a></li>
+          <li><a href="oferty.html?type=luksusowe">Luksusowe</a></li>
+          <li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li>
+        </ul>
+      </li>
+      <li><a href="o-nas.html" class="nav-link active">O nas</a></li>
+      <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="about-hero-content">
+    <p class="page-breadcrumb"><a href="index.html">Główna</a> / O nas</p>
+    <h1 class="page-title" style="color:var(--white)">Kim <em style="font-style:italic;color:var(--gold)">jesteśmy</em></h1>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="about-mission">
+  <div class="container">
+    <div class="about-mission-grid">
+      <div class="about-mission-text">
+        <p class="section-eyebrow" style="text-align:left">Nasza historia</p>
+        <h2>Ponad 14 lat pasji<br>do <em>wyjątkowych miejsc</em></h2>
+        <span class="gold-line left"></span>
+        <p>Aura Domu powstała we Wrocławiu w 2012 roku. Założyła ją Magdalena Kowalska – wrocławianka z pasją do architektury i pięknych przestrzeni. Idea była prosta: każdy człowiek zasługuje na dom, który odzwierciedla jego charakter i marzenia. Od pierwszego dnia stawiamy na relacje, transparentność i najwyższe standardy obsługi.</p>
+        <p>Dziś jesteśmy liderem rynku nieruchomości premium we Wrocławiu i na Dolnym Śląsku. Nasz zespół liczy 35 specjalistów – architektów, prawników, analityków rynku i doświadczonych agentów – którzy każdego dnia dbają o to, by Twoje doświadczenie z zakupem lub sprzedażą nieruchomości było bezproblemowe i satysfakcjonujące.</p>
+        <p>Specjalizujemy się w nieruchomościach klasy premium i luksusowej we Wrocławiu i na całym Dolnym Śląsku. Jesteśmy członkiem międzynarodowej sieci biur nieruchomości premium.</p>
+        <a href="kontakt.html" class="btn-gold" style="margin-top:1rem">Skontaktuj się z nami</a>
+      </div>
+      <div class="about-mission-img">
+        <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Wnętrze biura Aura Domu" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Co nas wyróżnia</p>
+      <h2 class="section-title light">Nasze <em>wartości</em></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-item">
+        <span class="value-icon">🏆</span>
+        <h3 class="value-title">Doskonałość</h3>
+        <p class="value-desc">Nie akceptujemy przeciętności. Każda oferta, prezentacja i transakcja jest dopracowana w najdrobniejszych szczegółach. To standard, który narzuciliśmy sobie od pierwszego dnia działalności i którego nie obniżamy bez względu na okoliczności. Wierzymy, że każdy klient zasługuje na to, co najlepsze.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">🤝</span>
+        <h3 class="value-title">Zaufanie</h3>
+        <p class="value-desc">Relacje oparte na zaufaniu to fundament naszej działalności. Transparentność, uczciwość i rzetelna informacja to wartości, które przyświecają nam na każdym etapie współpracy. Nigdy nie ukrywamy kosztów ani ryzyk – mówimy wprost, bo szanujemy Twój czas i pieniądze.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">💡</span>
+        <h3 class="value-title">Innowacja</h3>
+        <p class="value-desc">Aktywnie wdrażamy nowe technologie – wirtualne spacery 3D, drony, profesjonalne sesje foto i video. Nasze ogłoszenia generują średnio trzy razy więcej zapytań niż oferty przygotowane tradycyjnymi metodami, co przekłada się na szybszą sprzedaż i wyższą cenę.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">🌍</span>
+        <h3 class="value-title">Globalny zasięg</h3>
+        <p class="value-desc">Jako członek międzynarodowej sieci biur nieruchomości premium mamy dostęp do ponad 25 000 agentów w 80 krajach. Twoja wrocławska nieruchomość może trafić do kupującego z Niemiec, Skandynawii czy Azji – docieramy tam, gdzie inne biura po prostu nie sięgają.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">⚖️</span>
+        <h3 class="value-title">Bezpieczeństwo prawne</h3>
+        <p class="value-desc">Posiadamy własny dział prawny specjalizujący się w prawie nieruchomości. Każda transakcja jest szczegółowo weryfikowana pod kątem stanu prawnego, obciążeń hipotecznych i zgodności z miejscowym planem zagospodarowania. Kupujesz i sprzedajesz ze spokojem.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-icon">❤️</span>
+        <h3 class="value-title">Indywidualne podejście</h3>
+        <p class="value-desc">Każdy klient jest dla nas wyjątkowy. Słuchamy uważnie, analizujemy potrzeby i proponujemy rozwiązania szyte na miarę. Nie wysyłamy masowych mailingów ani nie dzwonimy z gotowymi skryptami – rozmawiamy jak ludzie z ludźmi, bo tak buduje się długotrwałe relacje i wzajemne zaufanie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Ludzie</p>
+      <h2 class="section-title">Nasz <em>zespół</em></h2>
+      <p class="section-desc">Poznaj ekspertów, którzy stoją za sukcesem Aura Domu</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Magdalena Kowalska" loading="lazy">
+        <h4>Magdalena Kowalska</h4>
+        <span>Dyrektor Generalna</span>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Piotr Zieliński" loading="lazy">
+        <h4>Piotr Zieliński</h4>
+        <span>Senior Agent Nieruchomości</span>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Tomasz Wierzbicki" loading="lazy">
+        <h4>Tomasz Wierzbicki</h4>
+        <span>Agent Premium</span>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Anna Wróblewska" loading="lazy">
+        <h4>Anna Wróblewska</h4>
+        <span>Radca Prawny</span>
+      </div>
+      <div class="team-card">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Michał Lewandowski" loading="lazy">
+        <h4>Michał Lewandowski</h4>
+        <span>Analityk Rynku</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Nagrody</p>
+      <h2 class="section-title">Doceniani przez <em>branżę</em></h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-year">2023</div>
+        <div class="award-name">Biuro Roku – Dolnośląskie Nagrody Nieruchomości</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2022</div>
+        <div class="award-name">Najlepsza Obsługa Klienta – Wrocław Business Awards</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2021</div>
+        <div class="award-name">Innowacja Roku – PropTech Wrocław Summit</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2020</div>
+        <div class="award-name">Top Agent Nieruchomości Luksusowych</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="container cta-content">
+    <p class="section-eyebrow light">Zacznijmy współpracę</p>
+    <h2 class="cta-title">Znajdźmy razem<br><em>Twój wymarzony dom</em></h2>
+    <p class="cta-desc">Skontaktuj się z naszym zespołem i zacznij swoją przygodę z nieruchomościami premium.</p>
+    <div class="cta-buttons">
+      <a href="oferty.html" class="btn-gold">Przeglądaj oferty</a>
+      <a href="kontakt.html" class="btn-outline-white">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="Aura Domu" width="700" height="371" loading="lazy"></div>
+        <p class="footer-tagline">Luksusowe nieruchomości we Wrocławiu i na Dolnym Śląsku. Twój wymarzony dom jest bliżej, niż myślisz.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Nawigacja</h4><ul><li><a href="index.html">Główna</a></li><li><a href="oferty.html">Oferty</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Oferty</h4><ul><li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li><li><a href="oferty.html?type=wynajem">Na wynajem</a></li><li><a href="oferty.html?type=luksusowe">Luksusowe</a></li><li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li>📍 ul. Świdnicka 22, 50-068 Wrocław</li><li>📞 +48 71 123 45 67</li><li>✉️ biuro@auradomu.pl</li><li>🕐 Pon–Pt: 9:00–18:00</li><li>🕐 Sob: 10:00–14:00</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aura Domu. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-links"><a href="#">Polityka prywatności</a><a href="#">Regulamin</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

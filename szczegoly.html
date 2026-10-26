@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<script>try{var t=localStorage.getItem('auraDomu_theme');if(t&&/^[a-z-]+$/.test(t))document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Szczegółowe informacje o wybranej nieruchomości Aura Domu: zdjęcia, metraż, cena i formularz zapytania o ofertę.">
+<meta property="og:title" content="Szczegóły oferty – Aura Domu">
+<meta property="og:description" content="Szczegółowe informacje o wybranej nieruchomości Aura Domu: zdjęcia, metraż, cena i formularz zapytania o ofertę.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Szczegóły oferty – Aura Domu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="contrast-toggle" id="contrastToggle" type="button" aria-label="Wybierz kolor strony" aria-haspopup="true" aria-expanded="false" aria-controls="themePanel"><span class="contrast-icon" aria-hidden="true"></span></button>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Aura Domu – strona główna"><img src="logo.png" alt="Aura Domu" width="700" height="371"></a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html" class="nav-link">Główna</a></li>
+      <li class="nav-dropdown">
+        <a href="oferty.html" class="nav-link active">Oferty <span class="arrow">▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="oferty.html">Wszystkie oferty</a></li>
+          <li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li>
+          <li><a href="oferty.html?type=wynajem">Na wynajem</a></li>
+          <li><a href="oferty.html?type=luksusowe">Luksusowe</a></li>
+          <li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li>
+        </ul>
+      </li>
+      <li><a href="o-nas.html" class="nav-link">O nas</a></li>
+      <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="padding-bottom:2rem">
+  <div style="max-width:1260px;margin:0 auto;padding:calc(var(--nav-height) + 1.5rem) 2rem 0">
+    <p style="font-size:.7rem;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:.5rem">
+      <a href="index.html" style="color:var(--gold)">Główna</a> /
+      <a href="oferty.html" style="color:var(--gold)">Oferty</a> / Szczegóły
+    </p>
+    <h1 class="page-title" style="color:var(--white)">Szczegóły <em style="font-style:italic;color:var(--gold)">oferty</em></h1>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="szczegoly-layout">
+
+  <!-- LEFT: listings navigation -->
+  <aside class="listings-sidebar">
+    <p class="sidebar-heading">Wybierz nieruchomość</p>
+    <ul class="nav-list" id="navList">
+
+        <li class="nav-item" data-target="1" onclick="showPanel(1)">
+          <img src="images/oferta-1-zewnatrz.jpg" alt="Nowoczesna willa z basenem">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#4a9a4a">Na sprzedaż</span>
+            <strong>Nowoczesna willa z basenem</strong>
+            <span class="nav-item-price">2 850 000 zł</span>
+            <span class="nav-item-loc">📍 Oporów, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="2" onclick="showPanel(2)">
+          <img src="images/oferta-2-zewnatrz.jpg" alt="Minimalistyczny dom w Krzykach">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#4a9a4a">Na sprzedaż</span>
+            <strong>Minimalistyczny dom w Krzykach</strong>
+            <span class="nav-item-price">1 450 000 zł</span>
+            <span class="nav-item-loc">📍 Krzyki, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="3" onclick="showPanel(3)">
+          <img src="images/oferta-3-zewnatrz.jpg" alt="Rezydencja przy Parku Leśnickim">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:var(--gold)">Luksus</span>
+            <strong>Rezydencja przy Parku Leśnickim</strong>
+            <span class="nav-item-price">4 200 000 zł</span>
+            <span class="nav-item-loc">📍 Leśnica, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="4" onclick="showPanel(4)">
+          <img src="images/oferta-4-zewnatrz.jpg" alt="Ekskluzywna willa na wynajem">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#4a7aaa">Na wynajem</span>
+            <strong>Ekskluzywna willa na wynajem</strong>
+            <span class="nav-item-price">18 000 zł/mies.</span>
+            <span class="nav-item-loc">📍 Śródmieście, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="5" onclick="showPanel(5)">
+          <img src="images/oferta-5-zewnatrz.jpg" alt="Nowa inwestycja – Złoty Zakątek">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#aa6a2a">Nowe</span>
+            <strong>Nowa inwestycja – Złoty Zakątek</strong>
+            <span class="nav-item-price">3 100 000 zł</span>
+            <span class="nav-item-loc">📍 Długołęka k. Wrocławia</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="6" onclick="showPanel(6)">
+          <img src="images/oferta-6-taras.jpg" alt="Penthouse z panoramą Wrocławia">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:var(--gold)">Luksus</span>
+            <strong>Penthouse z panoramą Wrocławia</strong>
+            <span class="nav-item-price">6 500 000 zł</span>
+            <span class="nav-item-loc">📍 Stare Miasto, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="7" onclick="showPanel(7)">
+          <img src="images/oferta-7-zewnatrz.jpg" alt="Dom z rozległym ogrodem">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#4a9a4a">Na sprzedaż</span>
+            <strong>Dom z rozległym ogrodem</strong>
+            <span class="nav-item-price">980 000 zł</span>
+            <span class="nav-item-loc">📍 Kobierzyce k. Wrocławia</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="8" onclick="showPanel(8)">
+          <img src="images/oferta-8-zewnatrz.jpg" alt="Rezydencja w stylu art déco">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#4a7aaa">Na wynajem</span>
+            <strong>Rezydencja w stylu art déco</strong>
+            <span class="nav-item-price">25 000 zł/mies.</span>
+            <span class="nav-item-loc">📍 Zalesie, Wrocław</span>
+          </div>
+        </li>
+        <li class="nav-item" data-target="9" onclick="showPanel(9)">
+          <img src="images/oferta-9-zewnatrz.jpg" alt="Ekodom pasywny z certyfikatem BREEAM">
+          <div class="nav-item-info">
+            <span class="nav-item-badge" style="background:#aa6a2a">Nowe</span>
+            <strong>Ekodom pasywny z certyfikatem BREEAM</strong>
+            <span class="nav-item-price">2 200 000 zł</span>
+            <span class="nav-item-loc">📍 Siechnice k. Wrocławia</span>
+          </div>
+        </li>
+    </ul>
+  </aside>
+
+  <!-- RIGHT: detail panels -->
+  <main class="detail-area" id="detailArea">
+
+    <!-- Empty state (shown before selection) -->
+    <div class="empty-state" id="emptyState">
+      <div class="big-icon">🏠</div>
+      <h3>Wybierz nieruchomość</h3>
+      <p>Kliknij dowolną ofertę na liście po lewej stronie,<br>aby zobaczyć pełne szczegóły.</p>
+    </div>
+
+
+  <!-- ═══════════════════════════ PANEL 1 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel1" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Na sprzedaż</span>
+      <img id="mainImg1" src="images/oferta-1-zewnatrz.jpg" alt="Nowoczesna willa z basenem" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="1">
+        <img src="images/oferta-1-zewnatrz.jpg" data-full="images/oferta-1-zewnatrz.jpg" class="active" alt="Nowoczesna willa z basenem – fasada">
+      <img src="images/oferta-1-salon.jpg" data-full="images/oferta-1-salon.jpg" alt="Nowoczesna willa z basenem – salon">
+      <img src="images/oferta-1-kuchnia.jpg" data-full="images/oferta-1-kuchnia.jpg" alt="Nowoczesna willa z basenem – kuchnia">
+      <img src="images/oferta-1-spa.jpg" data-full="images/oferta-1-spa.jpg" alt="Nowoczesna willa z basenem – strefa SPA">
+      <img src="images/oferta-1-sypialnia.jpg" data-full="images/oferta-1-sypialnia.jpg" alt="Nowoczesna willa z basenem – sypialnia">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Nowoczesna willa z basenem</h2>
+          <p class="prop-price">2 850 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Oporów, Wrocław</span>
+            <span class="meta-i">📐 520 m²</span>
+            <span class="meta-i">🛏 8 pokoi</span>
+            <span class="meta-i">🚿 4 łazienki</span>
+            <span class="meta-i">🚗 3 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Wyjątkowa rezydencja przy ul. Żernickiej w prestiżowej dzielnicy Oporów – 10 minut od Rynku Wrocławia. Budynek wyróżnia się architekturą łączącą surowy beton z ciepłym drewnem i dużymi przeszkleniami.</p>
+<p class="prop-desc">Parter obejmuje otwarty salon z jadalnią (85 m²), aneks kuchenny z wyspą, gabinet i pokój gościnny z łazienką en-suite. Salon otwiera się na zadaszony taras i basen zewnętrzny (12×5 m) z podgrzewaną wodą.</p>
+<p class="prop-desc">Na piętrze cztery sypialnie z łazienkami en-suite, strefa SPA z sauną fińską i jacuzzi oraz prywatne kino domowe z projektorem 4K. Garaż na trzy samochody z ładowarką EV. Smart home Loxone.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Ogrzewanie podłogowe</div>
+<div class="feat-i">Smart home Loxone</div>
+<div class="feat-i">Basen 12×5 m (podgrzewany)</div>
+<div class="feat-i">Sauna fińska i jacuzzi</div>
+<div class="feat-i">Kino domowe 4K</div>
+<div class="feat-i">Piwnica na wino (100 but.)</div>
+<div class="feat-i">Panele fotowoltaiczne 15 kWp</div>
+<div class="feat-i">Pompa ciepła Viessmann</div>
+<div class="feat-i">Rekuperacja Zehnder</div>
+<div class="feat-i">Garaż 3-stanowiskowy + EV</div>
+<div class="feat-i">Monitoring CCTV 24h</div>
+<div class="feat-i">Ogród 1 200 m²</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>520 m²</td></tr>
+<tr><td>Powierzchnia działki</td><td>1 650 m²</td></tr>
+<tr><td>Rok budowy</td><td>2022</td></tr>
+<tr><td>Kondygnacje</td><td>2 + podpiwniczenie</td></tr>
+<tr><td>Standard wykończenia</td><td>Premium – gotowy do wprowadzenia</td></tr>
+<tr><td>Certyfikat energetyczny</td><td>A+ (14 kWh/m²/rok)</td></tr>
+<tr><td>Ogrzewanie</td><td>Pompa ciepła + podłogówka</td></tr>
+<tr><td>Technologia</td><td>Smart home Loxone</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Piotr Zieliński">
+            <div><strong style="display:block;font-size:.9rem">Piotr Zieliński</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Senior Agent, Wrocław Południe</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Oporów, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Opor%C3%B3w%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Oporów, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 2 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel2" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Na sprzedaż</span>
+      <img id="mainImg2" src="images/oferta-2-zewnatrz.jpg" alt="Minimalistyczny dom w Krzykach" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="2">
+        <img src="images/oferta-2-zewnatrz.jpg" data-full="images/oferta-2-zewnatrz.jpg" class="active" alt="Minimalistyczny dom w Krzykach – fasada">
+      <img src="images/oferta-2-salon.jpg" data-full="images/oferta-2-salon.jpg" alt="Minimalistyczny dom w Krzykach – salon">
+      <img src="images/oferta-2-kuchnia.jpg" data-full="images/oferta-2-kuchnia.jpg" alt="Minimalistyczny dom w Krzykach – kuchnia">
+      <img src="images/oferta-2-sypialnia.jpg" data-full="images/oferta-2-sypialnia.jpg" alt="Minimalistyczny dom w Krzykach – sypialnia">
+      <img src="images/oferta-2-ogrod.jpg" data-full="images/oferta-2-ogrod.jpg" alt="Minimalistyczny dom w Krzykach – ogród">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Minimalistyczny dom w Krzykach</h2>
+          <p class="prop-price">1 450 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Krzyki, Wrocław</span>
+            <span class="meta-i">📐 320 m²</span>
+            <span class="meta-i">🛏 5 pokoi</span>
+            <span class="meta-i">🚿 3 łazienki</span>
+            <span class="meta-i">🚗 2 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Elegancki dom w stylu minimalistycznym w dzielnicy Krzyki – jednej z najbardziej pożądanych lokalizacji Wrocławia. Architekt zadbał o każdy detal: proporcje, materiały i układ funkcjonalny.</p>
+<p class="prop-desc">Parter to przestrzeń dzienna: salon z kominkiem bioetanolowym, jadalnia dla 10 osób i kuchnia z AGD Miele. Duże przeszklenia otwierają widok na prywatny ogród krajobrazowy 900 m² z tarasem z drewna tekowego.</p>
+<p class="prop-desc">Na pierwszym piętrze sypialnia główna z garderobą walk-in i łazienką marmurową oraz trzy pokoje dla dzieci lub gości. Dom wyposażony w system smart home i panele fotowoltaiczne.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Kominek bioetanolowy</div>
+<div class="feat-i">Smart home Apple HomeKit</div>
+<div class="feat-i">Ogród 900 m² (projekt krajobrazowy)</div>
+<div class="feat-i">Taras tekowy 60 m²</div>
+<div class="feat-i">AGD Miele w kuchni</div>
+<div class="feat-i">Garderoba walk-in</div>
+<div class="feat-i">Panele PV 10 kWp</div>
+<div class="feat-i">Pompa ciepła</div>
+<div class="feat-i">Alarm Satel</div>
+<div class="feat-i">Garaż 2-stanowiskowy</div>
+<div class="feat-i">Podłogi z dębu olejowanego</div>
+<div class="feat-i">Marmurowe łazienki</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>320 m²</td></tr>
+<tr><td>Powierzchnia działki</td><td>1 100 m²</td></tr>
+<tr><td>Rok budowy</td><td>2021</td></tr>
+<tr><td>Kondygnacje</td><td>2</td></tr>
+<tr><td>Standard wykończenia</td><td>Wysoki – gotowy do wprowadzenia</td></tr>
+<tr><td>Certyfikat energetyczny</td><td>A (22 kWh/m²/rok)</td></tr>
+<tr><td>Ogrzewanie</td><td>Pompa ciepła + podłogówka</td></tr>
+<tr><td>Garaż</td><td>2 miejsca, brama Hörmann</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Tomasz Wierzbicki">
+            <div><strong style="display:block;font-size:.9rem">Tomasz Wierzbicki</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Agent Premium, Wrocław</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Krzyki, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Krzyki%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Krzyki, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 3 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel3" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Luksus</span>
+      <img id="mainImg3" src="images/oferta-3-zewnatrz.jpg" alt="Rezydencja przy Parku Leśnickim" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="3">
+        <img src="images/oferta-3-zewnatrz.jpg" data-full="images/oferta-3-zewnatrz.jpg" class="active" alt="Rezydencja przy Parku Leśnickim – fasada">
+      <img src="images/oferta-3-salon.jpg" data-full="images/oferta-3-salon.jpg" alt="Rezydencja przy Parku Leśnickim – salon">
+      <img src="images/oferta-3-kino.jpg" data-full="images/oferta-3-kino.jpg" alt="Rezydencja przy Parku Leśnickim – sala kinowa">
+      <img src="images/oferta-3-lazienka.jpg" data-full="images/oferta-3-lazienka.jpg" alt="Rezydencja przy Parku Leśnickim – łazienka">
+      <img src="images/oferta-3-taras.jpg" data-full="images/oferta-3-taras.jpg" alt="Rezydencja przy Parku Leśnickim – taras">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Rezydencja przy Parku Leśnickim</h2>
+          <p class="prop-price">4 200 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Leśnica, Wrocław</span>
+            <span class="meta-i">📐 750 m²</span>
+            <span class="meta-i">🛏 10 pokoi</span>
+            <span class="meta-i">🚿 5 łazienek</span>
+            <span class="meta-i">🚗 4 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Wyjątkowa posiadłość usytuowana na granicy Parku Leśnickiego – jeden z najbardziej ekskluzywnych adresów we Wrocławiu. Rezydencja 750 m² na działce 3 200 m² zapewnia absolutną prywatność i kontakt z naturą.</p>
+<p class="prop-desc">Reprezentacyjne wnętrza zaprojektowała pracownia autorska z Wrocławia. Wielka hala wejściowa z lustrzanym sufitem, gabinet z widokiem na park, salon z kominkiem na drewno i jadalnią na 20 osób.</p>
+<p class="prop-desc">Strefa wellness: basen wewnętrzny 10×4 m, sauna sucha i parowa, siłownia, pokój masażu. Piwnica z salą kinową (12 foteli) i winiarnią na 500 butelek. Garaż podziemny na 4 samochody.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Basen wewnętrzny 10×4 m</div>
+<div class="feat-i">Sauna sucha + parowa</div>
+<div class="feat-i">Siłownia i pokój masażu</div>
+<div class="feat-i">Sala kinowa 12 foteli</div>
+<div class="feat-i">Winiarnia 500 butelek</div>
+<div class="feat-i">Ogród z fontanną</div>
+<div class="feat-i">Pokój dla obsługi z łazienką</div>
+<div class="feat-i">Garaż podziemny 4 miejsca</div>
+<div class="feat-i">System Crestron Home</div>
+<div class="feat-i">Ochrona 24h</div>
+<div class="feat-i">Winda domowa</div>
+<div class="feat-i">Taras panoramiczny 120 m²</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>750 m²</td></tr>
+<tr><td>Powierzchnia działki</td><td>3 200 m²</td></tr>
+<tr><td>Rok budowy</td><td>2019 – remont 2023</td></tr>
+<tr><td>Kondygnacje</td><td>3 + piwnica</td></tr>
+<tr><td>Standard wykończenia</td><td>Ultra premium</td></tr>
+<tr><td>Certyfikat energetyczny</td><td>B (38 kWh/m²/rok)</td></tr>
+<tr><td>Ogrzewanie</td><td>Piec gazowy + podłogówka</td></tr>
+<tr><td>System AV</td><td>Crestron</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Magdalena Kowalska">
+            <div><strong style="display:block;font-size:.9rem">Magdalena Kowalska</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Dyrektor Generalna</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Leśnica, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Le%C5%9Bnica%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Leśnica, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 4 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel4" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Na wynajem</span>
+      <img id="mainImg4" src="images/oferta-4-zewnatrz.jpg" alt="Ekskluzywna willa na wynajem" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="4">
+        <img src="images/oferta-4-zewnatrz.jpg" data-full="images/oferta-4-zewnatrz.jpg" class="active" alt="Ekskluzywna willa na wynajem – fasada">
+      <img src="images/oferta-4-salon.jpg" data-full="images/oferta-4-salon.jpg" alt="Ekskluzywna willa na wynajem – salon">
+      <img src="images/oferta-4-kuchnia.jpg" data-full="images/oferta-4-kuchnia.jpg" alt="Ekskluzywna willa na wynajem – kuchnia">
+      <img src="images/oferta-4-sypialnia.jpg" data-full="images/oferta-4-sypialnia.jpg" alt="Ekskluzywna willa na wynajem – sypialnia">
+      <img src="images/oferta-4-ogrod.jpg" data-full="images/oferta-4-ogrod.jpg" alt="Ekskluzywna willa na wynajem – ogród">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Ekskluzywna willa na wynajem</h2>
+          <p class="prop-price">18 000 zł/mies.</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Śródmieście, Wrocław</span>
+            <span class="meta-i">📐 420 m²</span>
+            <span class="meta-i">🛏 6 pokoi</span>
+            <span class="meta-i">🚿 3 łazienki</span>
+            <span class="meta-i">🚗 2 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Kompletnie umeblowana willa w centrum Wrocławia, 5 minut spaceru od Rynku. Idealna dla wymagającego najemcy, który szuka przestrzeni łączącej luksus z wyjątkową lokalizacją.</p>
+<p class="prop-desc">Dom wyposażony w meble z kolekcji premium (B&B Italia, Minotti), sprzęt AGD Gaggenau, system audio Sonos w każdym pomieszczeniu i klimatyzację Daikin. Prywatny ogród 600 m² z tarasem.</p>
+<p class="prop-desc">Wynajem obejmuje pełne umeblowanie i wyposażenie. Dostępna od zaraz, umowa na minimum 12 miesięcy. Opłaty eksploatacyjne pokrywa najemca.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Meble B&B Italia / Minotti</div>
+<div class="feat-i">AGD Gaggenau</div>
+<div class="feat-i">System audio Sonos</div>
+<div class="feat-i">Klimatyzacja Daikin</div>
+<div class="feat-i">Smart home</div>
+<div class="feat-i">Ogród 600 m²</div>
+<div class="feat-i">Garaż 2 miejsca</div>
+<div class="feat-i">Monitoring</div>
+<div class="feat-i">Ogrodzona posesja</div>
+<div class="feat-i">Pralnia z suszarką Miele</div>
+<div class="feat-i">Wbudowany ekspres do kawy</div>
+<div class="feat-i">Łazienki marmurowe</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>420 m²</td></tr>
+<tr><td>Działka</td><td>900 m²</td></tr>
+<tr><td>Rok budowy</td><td>2018 – remont 2022</td></tr>
+<tr><td>Dostępność</td><td>Od zaraz</td></tr>
+<tr><td>Minimalny okres najmu</td><td>12 miesięcy</td></tr>
+<tr><td>Kaucja</td><td>2 miesiące czynszu</td></tr>
+<tr><td>Opłaty eksploat.</td><td>ok. 1 800 zł/mies.</td></tr>
+<tr><td>Zwierzęta</td><td>Po uzgodnieniu</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Piotr Zieliński">
+            <div><strong style="display:block;font-size:.9rem">Piotr Zieliński</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Senior Agent, Wrocław Południe</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Śródmieście, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=%C5%9Ar%C3%B3dmie%C5%9Bcie%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Śródmieście, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 5 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel5" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Nowe</span>
+      <img id="mainImg5" src="images/oferta-5-zewnatrz.jpg" alt="Nowa inwestycja – Złoty Zakątek" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="5">
+        <img src="images/oferta-5-zewnatrz.jpg" data-full="images/oferta-5-zewnatrz.jpg" class="active" alt="Nowa inwestycja – Złoty Zakątek – fasada">
+      <img src="images/oferta-5-osiedle.jpg" data-full="images/oferta-5-osiedle.jpg" alt="Nowa inwestycja – Złoty Zakątek – osiedle z lotu ptaka">
+      <img src="images/oferta-5-salon.jpg" data-full="images/oferta-5-salon.jpg" alt="Nowa inwestycja – Złoty Zakątek – salon">
+      <img src="images/oferta-5-kuchnia.jpg" data-full="images/oferta-5-kuchnia.jpg" alt="Nowa inwestycja – Złoty Zakątek – kuchnia">
+      <img src="images/oferta-5-ogrod.jpg" data-full="images/oferta-5-ogrod.jpg" alt="Nowa inwestycja – Złoty Zakątek – ogród">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Nowa inwestycja – Złoty Zakątek</h2>
+          <p class="prop-price">3 100 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Długołęka k. Wrocławia</span>
+            <span class="meta-i">📐 480 m²</span>
+            <span class="meta-i">🛏 7 pokoi</span>
+            <span class="meta-i">🚿 4 łazienki</span>
+            <span class="meta-i">🚗 2 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Kameralne osiedle 10 domów premium w Długołęce – prestiżowej gminie pod Wrocławiem. Spokój podmiejski połączony z 20-minutowym dojazdem do centrum Wrocławia drogą S8.</p>
+<p class="prop-desc">Każdy dom zaprojektowany przez renomowaną pracownię architektoniczną. Klasa energetyczna A+, technologia pasywna, ogrzewanie pompą ciepła i 15 kWp fotowoltaiki. Osiedle zamknięte z ochroną 24h.</p>
+<p class="prop-desc">Do wyboru trzy warianty wykończenia: Klasyczny, Nowoczesny i Skandynawski. Możliwość zmiany układu pomieszczeń do zakończenia stanu surowego. Odbiór w IV kwartale 2027.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Technologia pasywna A+</div>
+<div class="feat-i">Pompa ciepła + podłogówka</div>
+<div class="feat-i">Fotowoltaika 15 kWp</div>
+<div class="feat-i">Rekuperacja</div>
+<div class="feat-i">Osiedle zamknięte + ochrona</div>
+<div class="feat-i">Smart home w standardzie</div>
+<div class="feat-i">Ogród min. 800 m²</div>
+<div class="feat-i">Garaż 2 miejsca + EV</div>
+<div class="feat-i">3 warianty wykończenia</div>
+<div class="feat-i">Możliwość zmian układu</div>
+<div class="feat-i">Dojazd S8 – 20 min do centrum</div>
+<div class="feat-i">Odbiór IV kw. 2027</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>480 m²</td></tr>
+<tr><td>Działka</td><td>od 900 m²</td></tr>
+<tr><td>Stan zaawansowania</td><td>W budowie</td></tr>
+<tr><td>Odbiór</td><td>IV kwartał 2027</td></tr>
+<tr><td>Certyfikat</td><td>A+ (pasywny)</td></tr>
+<tr><td>Ogrzewanie</td><td>Pompa ciepła + PV 15 kWp</td></tr>
+<tr><td>Osiedle</td><td>Zamknięte, 10 domów</td></tr>
+<tr><td>Dojazd do centrum</td><td>20 min S8</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Tomasz Wierzbicki">
+            <div><strong style="display:block;font-size:.9rem">Tomasz Wierzbicki</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Agent Premium, Wrocław</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Długołęka k. Wrocławia</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=D%C5%82ugo%C5%82%C4%99ka%20k.%20Wroc%C5%82awia&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Długołęka k. Wrocławia"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 6 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel6" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Luksus</span>
+      <img id="mainImg6" src="images/oferta-6-taras.jpg" alt="Penthouse z panoramą Wrocławia" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="6">
+        <img src="images/oferta-6-taras.jpg" data-full="images/oferta-6-taras.jpg" class="active" alt="Penthouse z panoramą Wrocławia – taras">
+      <img src="images/oferta-6-salon.jpg" data-full="images/oferta-6-salon.jpg" alt="Penthouse z panoramą Wrocławia – salon">
+      <img src="images/oferta-6-kuchnia.jpg" data-full="images/oferta-6-kuchnia.jpg" alt="Penthouse z panoramą Wrocławia – kuchnia">
+      <img src="images/oferta-6-sypialnia.jpg" data-full="images/oferta-6-sypialnia.jpg" alt="Penthouse z panoramą Wrocławia – sypialnia">
+      <img src="images/oferta-6-widok.jpg" data-full="images/oferta-6-widok.jpg" alt="Penthouse z panoramą Wrocławia – widok na miasto">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Penthouse z panoramą Wrocławia</h2>
+          <p class="prop-price">6 500 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Stare Miasto, Wrocław</span>
+            <span class="meta-i">📐 320 m²</span>
+            <span class="meta-i">🛏 5 pokoi</span>
+            <span class="meta-i">🚿 3 łazienki</span>
+            <span class="meta-i">🚗 2 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Jedyny w swoim rodzaju penthouse na 22. piętrze ekskluzywnego wieżowca w centrum Wrocławia. Taras widokowy 160 m² z panoramą 360° – katedra, Odra, panorama Sudetów w pogodne dni.</p>
+<p class="prop-desc">Wnętrza zaprojektowane przez studio z Mediolanu: posadzki z trawertynu, wysokość pomieszczeń 3 m, kuchnia Bulthaup z AGD Gaggenau. Salon 80 m² otwiera się na taras południowy.</p>
+<p class="prop-desc">Budynek oferuje prywatną windę do penthouse'u, concierge 24h, basen, spa i siłownię na parterze. Parking podziemny z 2 miejscami. Jeden z najbardziej prestiżowych adresów w Polsce.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Taras 160 m² (panorama 360°)</div>
+<div class="feat-i">Prywatna winda</div>
+<div class="feat-i">Concierge 24h</div>
+<div class="feat-i">Kuchnia Bulthaup + Gaggenau</div>
+<div class="feat-i">Posadzki z trawertynu</div>
+<div class="feat-i">Wysokość pomieszczeń 3 m</div>
+<div class="feat-i">Klimatyzacja Mitsubishi</div>
+<div class="feat-i">System KNX</div>
+<div class="feat-i">Parking podziemny 2 miejsca</div>
+<div class="feat-i">Basen i SPA w budynku</div>
+<div class="feat-i">Siłownia w budynku</div>
+<div class="feat-i">Projekt studio z Mediolanu</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>320 m²</td></tr>
+<tr><td>Taras</td><td>160 m²</td></tr>
+<tr><td>Piętro</td><td>22 / 22</td></tr>
+<tr><td>Rok budowy</td><td>2023</td></tr>
+<tr><td>Standard</td><td>Ultra luksusowy – gotowy do zamieszkania</td></tr>
+<tr><td>Certyfikat</td><td>A</td></tr>
+<tr><td>Ogrzewanie</td><td>Klimakonwektory</td></tr>
+<tr><td>Obsługa</td><td>Concierge i portier 24h</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Magdalena Kowalska">
+            <div><strong style="display:block;font-size:.9rem">Magdalena Kowalska</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Dyrektor Generalna</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Stare Miasto, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Stare%20Miasto%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Stare Miasto, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 7 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel7" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Na sprzedaż</span>
+      <img id="mainImg7" src="images/oferta-7-zewnatrz.jpg" alt="Dom z rozległym ogrodem" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="7">
+        <img src="images/oferta-7-zewnatrz.jpg" data-full="images/oferta-7-zewnatrz.jpg" class="active" alt="Dom z rozległym ogrodem – fasada">
+      <img src="images/oferta-7-salon.jpg" data-full="images/oferta-7-salon.jpg" alt="Dom z rozległym ogrodem – salon">
+      <img src="images/oferta-7-kuchnia.jpg" data-full="images/oferta-7-kuchnia.jpg" alt="Dom z rozległym ogrodem – kuchnia">
+      <img src="images/oferta-7-sypialnia.jpg" data-full="images/oferta-7-sypialnia.jpg" alt="Dom z rozległym ogrodem – sypialnia">
+      <img src="images/oferta-7-ogrod.jpg" data-full="images/oferta-7-ogrod.jpg" alt="Dom z rozległym ogrodem – ogród">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Dom z rozległym ogrodem</h2>
+          <p class="prop-price">980 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Kobierzyce k. Wrocławia</span>
+            <span class="meta-i">📐 280 m²</span>
+            <span class="meta-i">🛏 5 pokoi</span>
+            <span class="meta-i">🚿 2 łazienki</span>
+            <span class="meta-i">🚗 1 miejsce</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Przestronny dom w gminie Kobierzyce – jednej z najszybciej rozwijających się gmin w Polsce, bezpośrednio sąsiadującej z Wrocławiem. Do centrum miasta 15 minut autostradą A4.</p>
+<p class="prop-desc">Dom parterowy z użytkowym poddaszem. Parter: salon 50 m² z kominkiem, jadalnia, kuchnia z wyspą, pokój gościnny z łazienką. Poddasze: sypialnia główna z garderobą i 2 pokoje dziecięce.</p>
+<p class="prop-desc">Ogród krajobrazowy 1 400 m² z altaną, miejscem na ognisko i jabłoniowym sadem. Idealne dla rodziny szukającej ciszy podmiejskiej z pełną infrastrukturą (szkoły, sklepy, komunikacja).</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Kominek z wkładem żeliwnym</div>
+<div class="feat-i">Ogród 1 400 m² z sadem</div>
+<div class="feat-i">Altana ogrodowa</div>
+<div class="feat-i">Kuchnia z wyspą</div>
+<div class="feat-i">Garaż 1-stanowiskowy</div>
+<div class="feat-i">Piwnica 40 m²</div>
+<div class="feat-i">Pompa ciepła powietrzna</div>
+<div class="feat-i">Panele PV 6 kWp</div>
+<div class="feat-i">Alarm Satel</div>
+<div class="feat-i">Poddasze użytkowe</div>
+<div class="feat-i">Blisko A4 (15 min centrum)</div>
+<div class="feat-i">Spokojne osiedle</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>280 m²</td></tr>
+<tr><td>Działka</td><td>1 800 m²</td></tr>
+<tr><td>Rok budowy</td><td>2017</td></tr>
+<tr><td>Kondygnacje</td><td>Parter + poddasze</td></tr>
+<tr><td>Stan</td><td>Bardzo dobry</td></tr>
+<tr><td>Certyfikat</td><td>B</td></tr>
+<tr><td>Ogrzewanie</td><td>Pompa ciepła + PV 6 kWp</td></tr>
+<tr><td>Dojazd do centrum</td><td>15 min A4</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Tomasz Wierzbicki">
+            <div><strong style="display:block;font-size:.9rem">Tomasz Wierzbicki</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Agent Premium, Wrocław</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Kobierzyce k. Wrocławia</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Kobierzyce%20k.%20Wroc%C5%82awia&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Kobierzyce k. Wrocławia"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 8 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel8" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Na wynajem</span>
+      <img id="mainImg8" src="images/oferta-8-zewnatrz.jpg" alt="Rezydencja w stylu art déco" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="8">
+        <img src="images/oferta-8-zewnatrz.jpg" data-full="images/oferta-8-zewnatrz.jpg" class="active" alt="Rezydencja w stylu art déco – fasada">
+      <img src="images/oferta-8-salon.jpg" data-full="images/oferta-8-salon.jpg" alt="Rezydencja w stylu art déco – salon">
+      <img src="images/oferta-8-jadalnia.jpg" data-full="images/oferta-8-jadalnia.jpg" alt="Rezydencja w stylu art déco – jadalnia">
+      <img src="images/oferta-8-sypialnia.jpg" data-full="images/oferta-8-sypialnia.jpg" alt="Rezydencja w stylu art déco – sypialnia">
+      <img src="images/oferta-8-park.jpg" data-full="images/oferta-8-park.jpg" alt="Rezydencja w stylu art déco – park">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Rezydencja w stylu art déco</h2>
+          <p class="prop-price">25 000 zł/mies.</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Zalesie, Wrocław</span>
+            <span class="meta-i">📐 520 m²</span>
+            <span class="meta-i">🛏 8 pokoi</span>
+            <span class="meta-i">🚿 4 łazienki</span>
+            <span class="meta-i">🚗 3 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Przedwojenna rezydencja w dzielnicy Zalesie, po kompleksowej renowacji trwającej trzy lata. Zachowane oryginalne detale: sztukaterie, witraże, dębowe boazerie i historyczne kominki – teraz w połączeniu z nowoczesnymi systemami.</p>
+<p class="prop-desc">Dom otoczony parkiem prywatnym 2 000 m² z rzeźbami, fontanną i oranżerią. Salon reprezentacyjny 100 m² z balkonem, biblioteka z kominkiem, sala bilardowa i piwnica z barem.</p>
+<p class="prop-desc">Wynajem obejmuje pełne umeblowanie z kolekcji antycznej i designerskiej. Możliwość organizacji prywatnych przyjęć i eventów. Umowa od 12 miesięcy.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Oryginalne sztukaterie i witraże</div>
+<div class="feat-i">Kominki historyczne (4 szt.)</div>
+<div class="feat-i">Park prywatny 2 000 m²</div>
+<div class="feat-i">Oranżeria</div>
+<div class="feat-i">Biblioteka z kominkiem</div>
+<div class="feat-i">Sala bilardowa</div>
+<div class="feat-i">Piwnica z barem</div>
+<div class="feat-i">Nowe instalacje (2022)</div>
+<div class="feat-i">Smart home</div>
+<div class="feat-i">Garaż 3-stanowiskowy</div>
+<div class="feat-i">Antyczne meble</div>
+<div class="feat-i">Eventy na życzenie</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>520 m²</td></tr>
+<tr><td>Park</td><td>2 000 m²</td></tr>
+<tr><td>Rok budowy</td><td>1928 – renowacja 2022</td></tr>
+<tr><td>Dostępność</td><td>Od zaraz</td></tr>
+<tr><td>Minimalny okres najmu</td><td>12 miesięcy</td></tr>
+<tr><td>Kaucja</td><td>3 miesiące czynszu</td></tr>
+<tr><td>Styl</td><td>Art déco</td></tr>
+<tr><td>Eventy</td><td>Możliwość organizacji</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Magdalena Kowalska">
+            <div><strong style="display:block;font-size:.9rem">Magdalena Kowalska</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Dyrektor Generalna</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Zalesie, Wrocław</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Zalesie%2C%20Wroc%C5%82aw&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Zalesie, Wrocław"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANEL 9 ═══════════════════════════ -->
+  <div class="prop-panel" id="panel9" style="display:none">
+    <div style="position:relative">
+      <span class="prop-badge">Nowe</span>
+      <img id="mainImg9" src="images/oferta-9-zewnatrz.jpg" alt="Ekodom pasywny z certyfikatem BREEAM" class="prop-main-img">
+    </div>
+    <div class="container">
+      <div class="prop-thumbs" data-panel="9">
+        <img src="images/oferta-9-zewnatrz.jpg" data-full="images/oferta-9-zewnatrz.jpg" class="active" alt="Ekodom pasywny z certyfikatem BREEAM – fasada">
+      <img src="images/oferta-9-salon.jpg" data-full="images/oferta-9-salon.jpg" alt="Ekodom pasywny z certyfikatem BREEAM – salon">
+      <img src="images/oferta-9-kuchnia.jpg" data-full="images/oferta-9-kuchnia.jpg" alt="Ekodom pasywny z certyfikatem BREEAM – kuchnia">
+      <img src="images/oferta-9-panele.jpg" data-full="images/oferta-9-panele.jpg" alt="Ekodom pasywny z certyfikatem BREEAM – panele fotowoltaiczne">
+      <img src="images/oferta-9-ogrod.jpg" data-full="images/oferta-9-ogrod.jpg" alt="Ekodom pasywny z certyfikatem BREEAM – ogród">
+      
+      </div>
+      <div class="prop-layout">
+        <div>
+          <h2 class="prop-title">Ekodom pasywny z certyfikatem BREEAM</h2>
+          <p class="prop-price">2 200 000 zł</p>
+          <div class="prop-meta">
+            <span class="meta-i">📍 Siechnice k. Wrocławia</span>
+            <span class="meta-i">📐 380 m²</span>
+            <span class="meta-i">🛏 6 pokoi</span>
+            <span class="meta-i">🚿 3 łazienki</span>
+            <span class="meta-i">🚗 2 miejsca</span>
+          </div>
+          <h2 class="prop-sec-title">Opis nieruchomości</h2>
+          <p class="prop-desc">Jeden z nielicznych domów pasywnych z certyfikatem BREEAM Outstanding we Wrocławskim Obszarze Metropolitalnym. Siechnice to dynamicznie rozwijająca się gmina 12 km od centrum Wrocławia z własną komunikacją miejską.</p>
+<p class="prop-desc">Dom zaprojektowany zgodnie z filozofią zero-waste: ściany trójwarstwowe, okna trzyszybowe Internorm, rekuperacja Zehnder z odzyskiem 93% ciepła, zbiornik na wodę deszczową 10 000 l do nawadniania ogrodu.</p>
+<p class="prop-desc">Wnętrza utrzymane w estetyce skandynawskiej: dużo drewna, naturalnych tkanin i światła. Kuchnia wykonana na wymiar. Dom gotowy do wprowadzenia, wyposażony w meble BOLIA.</p>
+          <h2 class="prop-sec-title">Wyposażenie i cechy</h2>
+          <div class="feat-grid"><div class="feat-i">Certyfikat BREEAM Outstanding</div>
+<div class="feat-i">Rekuperacja Zehnder 93%</div>
+<div class="feat-i">Fotowoltaika 20 kWp</div>
+<div class="feat-i">Pompa ciepła gruntowa</div>
+<div class="feat-i">Zbiornik deszczówki 10 000 l</div>
+<div class="feat-i">Okna trzyszybowe Internorm</div>
+<div class="feat-i">Ściany trójwarstwowe</div>
+<div class="feat-i">Meble BOLIA w standardzie</div>
+<div class="feat-i">Kuchnia na wymiar</div>
+<div class="feat-i">Panele akustyczne</div>
+<div class="feat-i">EV ładowarka 22 kW</div>
+<div class="feat-i">Ogród bioróżnorodny</div></div>
+          <h2 class="prop-sec-title">Dane techniczne</h2>
+          <table class="data-table"><tr><td>Powierzchnia użytkowa</td><td>380 m²</td></tr>
+<tr><td>Działka</td><td>1 000 m²</td></tr>
+<tr><td>Rok budowy</td><td>2024</td></tr>
+<tr><td>Certyfikat</td><td>BREEAM Outstanding</td></tr>
+<tr><td>Zapotrzebowanie na energię</td><td>11 kWh/m²/rok</td></tr>
+<tr><td>Ogrzewanie</td><td>Pompa ciepła gruntowa + PV 20 kWp</td></tr>
+<tr><td>Dojazd do centrum</td><td>12 km / komunikacja miejska</td></tr>
+<tr><td>Meble</td><td>W cenie (BOLIA)</td></tr></table>
+        </div>
+        <aside>
+        <div class="sidebar-card">
+          <h3>Zapytaj o ofertę</h3>
+          <input type="text" class="inquiry-name" placeholder="Imię i nazwisko">
+          <input type="email" class="inquiry-email" placeholder="Adres e-mail">
+          <input type="tel" class="inquiry-phone" placeholder="Numer telefonu">
+          <textarea rows="4" class="inquiry-msg" placeholder="Wiadomość..."></textarea>
+          <button type="button" class="btn-gold inquiry-submit" style="width:100%;cursor:pointer;border:none;margin-top:.25rem">Wyślij zapytanie</button>
+          <div class="inquiry-success" style="display:none;font-size:.75rem;color:#7ec87e;text-align:center;margin-top:.75rem;line-height:1.5">
+            ✓ Dziękujemy! Odpowiemy najpóźniej następnego dnia roboczego.
+          </div>
+          <p style="font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:1rem">Odpowiadamy w dni robocze.</p>
+        </div>
+        <div class="agent-box">
+          <h4>Opiekun oferty</h4>
+          <div class="agent-row">
+            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Piotr Zieliński">
+            <div><strong style="display:block;font-size:.9rem">Piotr Zieliński</strong>
+            <span style="font-size:.72rem;color:var(--gold)">Senior Agent, Wrocław Południe</span></div>
+          </div>
+          <a href="tel:+48711234567" class="btn-outline" style="display:block;text-align:center;margin-bottom:.75rem">📞 +48 71 123 45 67</a>
+          <a href="kontakt.html" class="btn-outline" style="display:block;text-align:center">✉️ Napisz wiadomość</a>
+        </div></aside>
+      </div>
+      <div class="map-detail">
+        <h2 class="prop-sec-title">Lokalizacja – Siechnice k. Wrocławia</h2>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps?q=Siechnice%20k.%20Wroc%C5%82awia&hl=pl&z=14&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa lokalizacji – Siechnice k. Wrocławia"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="Aura Domu" width="700" height="371" loading="lazy"></div>
+        <p class="footer-tagline">Luksusowe nieruchomości we Wrocławiu i na Dolnym Śląsku. Twój wymarzony dom jest bliżej, niż myślisz.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Nawigacja</h4><ul><li><a href="index.html">Główna</a></li><li><a href="oferty.html">Oferty</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div class="footer-col"><h4>Oferty</h4><ul><li><a href="oferty.html?type=sprzedaz">Na sprzedaż</a></li><li><a href="oferty.html?type=wynajem">Na wynajem</a></li><li><a href="oferty.html?type=luksusowe">Luksusowe</a></li><li><a href="oferty.html?type=nowe">Nowe inwestycje</a></li></ul></div>
+      <div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li>📍 ul. Świdnicka 22, 50-068 Wrocław</li><li>📞 +48 71 123 45 67</li><li>✉️ biuro@auradomu.pl</li><li>🕐 Pon–Pt: 9:00–18:00</li><li>🕐 Sob: 10:00–14:00</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aura Domu. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-links"><a href="#">Polityka prywatności</a><a href="#">Regulamin</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<script src="script.js"></script>
+</body>
+</html>
